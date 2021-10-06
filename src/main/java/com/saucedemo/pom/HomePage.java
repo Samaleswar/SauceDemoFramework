@@ -31,6 +31,10 @@ public class HomePage extends BasePage implements AutoConstant {
 	@FindBy(css = ".inventory_item_name")
 	private List<WebElement> list1;
 
+	@FindBy(css = ".inventory_item_price")
+	private List<WebElement> list6;
+
+	
 	@FindBy(css = ".product_sort_container")
 	private WebElement dropdownlist;
 
@@ -85,21 +89,22 @@ public class HomePage extends BasePage implements AutoConstant {
 		Select dropdown = new Select(dropdownlist);
 		dropdown.selectByValue("lohi");
 
-		for (int i = 0; i < list1.size(); i++) {
+		for (int i = 0; i < list6.size(); i++) {
 
-			list4.add(list1.get(i).getText());
+			list4.add(list6.get(i).getText());
 
 		}
 
 		Collections.reverse(list4);
-
+		System.out.println(list4);
 		dropdown.selectByValue("hilo");
-		for (int i = 0; i < list1.size(); i++) {
+		for (int i = 0; i < list6.size(); i++) {
 
 			list5.add(list1.get(i).getText());
 
 		}
-
+		//System.out.println(list5);
+		//System.out.println(list4);
 		Assert.assertEquals(list4, list5);
 
 	}
