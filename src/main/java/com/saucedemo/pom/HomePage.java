@@ -96,15 +96,15 @@ public class HomePage extends BasePage implements AutoConstant {
 		}
 
 		Collections.reverse(list4);
-		System.out.println(list4);
+	//	System.out.println(list4);
 		dropdown.selectByValue("hilo");
 		for (int i = 0; i < list6.size(); i++) {
 
-			list5.add(list1.get(i).getText());
+			list5.add(list6.get(i).getText());
 
 		}
-		//System.out.println(list5);
-		//System.out.println(list4);
+	//	System.out.println(list5);
+	//	System.out.println(list4);
 		Assert.assertEquals(list4, list5);
 
 	}
